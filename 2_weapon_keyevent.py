@@ -92,10 +92,15 @@ while running:
     # 100,200  --> 180, 160, 120, ...
     # 500,200  --->180, 160, 120 ,...
     weapons = [ [w[0],w[1]- weapon_speed]  for w in weapons ] # 무기위치를 위로
-
+   
     # 천장에 닿은 무기 없애기
     weapons = [ [w[0],w[1]] for w in weapons if w[1] > 0] 
-
+    # temporary = []
+    # for w in weapons:
+    #     if w[1] >0:
+    #         temporary.append(w)
+    # weapons = temporary 
+  
     # 4. 충돌처리 
    
     # 5. 화면에 그리기
@@ -108,7 +113,7 @@ while running:
     screen.blit(stage,(0,screen_height - stage_height))
     screen.blit(character,(character_x_pos, character_y_pos))
 
-   
+  
 
     pygame.display.update()
    
